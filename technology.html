@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BICP - Technology Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore the technology powering BICP infrastructure digital twins and visualization workflows." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>
+            <div class="logo-text-main">BICP</div>
+            <div class="logo-text-sub" data-i18n="logo-sub">
+              Infrastructure Digital Twins
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+        </button>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="index.html#home" data-i18n="nav-home">Home</a>
+            <a href="index.html#services" data-i18n="nav-services">Services</a>
+            <a href="products.html" data-i18n="nav-products">Products</a>
+            <a href="technology.html" data-i18n="nav-tech">Technology</a>
+            <a href="case-studies.html" data-i18n="nav-cases">Case Studies</a>
+            <a href="about.html" data-i18n="nav-about">About</a>
+            <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+            <a href="index.html#contact" class="nav-cta">
+              <span data-i18n="nav-cta">Contact</span> &rarr;
+            </a>
+          </div>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+<section id="technology">
+      <div class="container">
+        <h2 class="section-title" data-i18n="tech-title">Technology Stack</h2>
+        <p class="section-subtitle" data-i18n="tech-subtitle">
+          BICP combines game engine technology, BIM/GIS data, and NVIDIA GPUs to deliver
+          infrastructure digital twins at scale.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <article class="card">
+              <div class="card-label" data-i18n="tech1-label">Engine & Rendering</div>
+              <h3 class="card-title" data-i18n="tech1-title">
+                Unreal Engine 5.6 + NVIDIA RTX
+              </h3>
+              <p class="card-text" data-i18n="tech1-text">
+                Our visualization pipeline uses UE5’s Nanite, Lumen, and World Partition
+                with NVIDIA RTX for real-time ray traced lighting and performance.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="tech1-li1">Nanite geometry for complex assets</li>
+                <li data-i18n="tech1-li2">Lumen global illumination</li>
+                <li data-i18n="tech1-li3">DLSS for large terrain performance</li>
+              </ul>
+            </article>
+
+            <article class="card" style="margin-top: 16px;">
+              <div class="card-label" data-i18n="tech2-label">Data & Interoperability</div>
+              <h3 class="card-title" data-i18n="tech2-title">
+                BIM · GIS · Lidar · DEM
+              </h3>
+              <p class="card-text" data-i18n="tech2-text">
+                We support a wide range of engineering data formats and geospatial
+                references for accurate, context-aware digital twins.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="tech2-li1">IFC4.3, Revit, Navisworks, DWG/DXF</li>
+                <li data-i18n="tech2-li2">Shapefiles, GeoJSON, Mapbox/Cesium</li>
+                <li data-i18n="tech2-li3">DEM, heightmaps, Lidar (LAS/LAZ)</li>
+              </ul>
+            </article>
+          </div>
+
+          <div>
+            <div class="media-block">
+              <div>
+                <strong data-i18n="tech-media-title">TECHNOLOGY DIAGRAM PLACEHOLDER</strong>
+                <div data-i18n="tech-media-body">
+                  Insert a BICP architecture diagram showing data sources → pipeline →
+                  UE5 → viewer/VR here.
+                </div>
+                <div style="margin-top: 6px; font-size: 0.78rem;" data-i18n="tech-media-note">
+                  Suggested: simple 3–4 step diagram or flowchart.
+                </div>
+              </div>
+            </div>
+
+            <div class="pill-list">
+              <div class="pill" data-i18n="pill7">RTX 6000 Ada Cloud Instances</div>
+              <div class="pill" data-i18n="pill8">Omniverse USD (Planned)</div>
+              <div class="pill" data-i18n="pill9">Python & C# Automation</div>
+              <div class="pill" data-i18n="pill10">Scene Streaming</div>
+              <div class="pill" data-i18n="pill11">Massive Terrain Support</div>
+              <div class="pill" data-i18n="pill12">AI-Assisted Optimization</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div data-i18n="footer-text">
+        &copy; <span id="year"></span> BICP - Infrastructure Digital Twins &amp; Visualization.
+      </div>
+      <div class="footer-links">
+        <a href="index.html#home" data-i18n="nav-home">Home</a>
+        <a href="index.html#services" data-i18n="nav-services">Services</a>
+        <a href="products.html" data-i18n="nav-products">Products</a>
+        <a href="index.html#contact" data-i18n="nav-contact-foot">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

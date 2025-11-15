@@ -85,8 +85,116 @@ const translations = {
     "service6-li3": "Pipeline automation consulting",
     "service6-tag": "Pipeline",
 
-    // Products, Tech, Cases, About, Contact etc...
-    // (keep all keys from previous version; omitted here for brevity)
+    // PRODUCTS
+    "products-title": "Products",
+    "products-subtitle":
+      "BICP is building a suite of tools that turn complex infrastructure data into scalable, real-time digital experiences.",
+    "product1-title": "AI-Assisted BIM/GIS-to-VR Converter",
+    "product1-text":
+      "Automatically converts CAD, BIM, and GIS datasets into ready-to-use Unreal Engine scenes with minimal manual work.",
+    "product1-li1": "Automated mesh & material conversion",
+    "product1-li2": "AI-powered cleanup and classification",
+    "product1-li3": "LOD and streaming setup",
+    "product1-tag": "In Development",
+    "product2-title": "Infrastructure Digital Twin Viewer",
+    "product2-text":
+      "A lightweight viewer focused on exploration, measurement, and metadata visualization for infrastructure assets.",
+    "product2-li1": "IFC property exploration",
+    "product2-li2": "Layer controls & filters",
+    "product2-li3": "Web/desktop deployment options",
+    "product2-tag": "Pilot Ready",
+    "product3-title": "Highway Information Management (HIM)",
+    "product3-text":
+      "A data-driven platform connecting road assets, alignments, structures, and visualization in one interface.",
+    "product3-li1": "Road asset database & layers",
+    "product3-li2": "Navisworks, Civil 3D, IFC support",
+    "product3-li3": "Future AI-based predictive analytics",
+    "product3-tag": "Roadmap",
+    "product-media-title": "PRODUCT UI PLACEHOLDER",
+    "product-media-body":
+      "Insert BICP converter, viewer, or HIM UI screenshots/clips here.",
+    "product-media-note":
+      "Suggested: 2-3 static screens or a short carousel.",
+    "pill1": "BIM to VR Automation",
+    "pill2": "IFC4.3 Infrastructure",
+    "pill3": "Navisworks / Civil 3D Integration",
+    "pill4": "Scene Optimization",
+    "pill5": "RTX-Accelerated Rendering",
+    "pill6": "Cloud Deployment",
+
+    // TECHNOLOGY
+    "tech-title": "Technology Stack",
+    "tech-subtitle":
+      "BICP combines game engine technology, BIM/GIS data, and NVIDIA GPUs to deliver infrastructure digital twins at scale.",
+    "tech1-label": "Engine & Rendering",
+    "tech1-title": "Unreal Engine 5.6 + NVIDIA RTX",
+    "tech1-text":
+      "Our visualization pipeline uses UE5's Nanite, Lumen, and World Partition with NVIDIA RTX for real-time ray traced lighting and performance.",
+    "tech1-li1": "Nanite geometry for complex assets",
+    "tech1-li2": "Lumen global illumination",
+    "tech1-li3": "DLSS for large terrain performance",
+    "tech2-label": "Data & Interoperability",
+    "tech2-title": "BIM • GIS • Lidar • DEM",
+    "tech2-text":
+      "We support a wide range of engineering data formats and geospatial references for accurate, context-aware digital twins.",
+    "tech2-li1": "IFC4.3, Revit, Navisworks, DWG/DXF",
+    "tech2-li2": "Shapefiles, GeoJSON, Mapbox/Cesium",
+    "tech2-li3": "DEM, heightmaps, Lidar (LAS/LAZ)",
+    "tech-media-title": "TECHNOLOGY DIAGRAM PLACEHOLDER",
+    "tech-media-body":
+      "Insert a BICP architecture diagram showing data sources → pipeline → UE5 → viewer/VR here.",
+    "tech-media-note":
+      "Suggested: simple 3-4 step diagram or flowchart.",
+    "pill7": "RTX 6000 Ada Cloud Instances",
+    "pill8": "Omniverse USD (Planned)",
+    "pill9": "Python & C# Automation",
+    "pill10": "Scene Streaming",
+    "pill11": "Massive Terrain Support",
+    "pill12": "AI-Assisted Optimization",
+
+    // CASE STUDIES
+    "cases-title": "Case Studies",
+    "cases-subtitle":
+      "A selection of projects where BICP helped engineering teams communicate complex infrastructure designs through real-time 3D.",
+    "case1-title": "Benghazi Ring Road Digital Twin",
+    "case1-tag": "Highway • Real-Time",
+    "case1-meta": "Inputs: Civil 3D alignments • DWG • DEM • 3D models",
+    "case1-text":
+      "We built a UE5-based real-time environment for a major ring road project, including interchanges, structures, and terrain. The digital twin was used for client presentations and design review.",
+    "case1-li1": "Full 3D overview of road and junctions",
+    "case1-li2": "Cinematic flythroughs for stakeholders",
+    "case1-li3": "Optimized performance on RTX GPUs",
+    "case1-media":
+      "CASE STUDY MEDIA PLACEHOLDER - Insert BICP screenshots or a short video clip from this project here.",
+    "case2-title": "Urban Mobility Visualization",
+    "case2-tag": "City • Traffic",
+    "case2-meta": "Inputs: GIS layers • aerial imagery • simulation outputs",
+    "case2-text":
+      "We visualized multi-modal mobility scenarios with animated traffic, highlighting peak-hour congestion patterns and infrastructure impacts.",
+    "case2-li1": "Signalized intersection animations",
+    "case2-li2": "Scenario-based traffic visualizations",
+    "case2-li3": "Video exports for public communication",
+    "case2-media":
+      "CASE STUDY MEDIA PLACEHOLDER - Insert overview views, intersections and traffic animation snippets here.",
+
+    // ABOUT
+    "about-title": "About BICP",
+    "about-subtitle":
+      "BICP combines civil engineering knowledge, BIM/GIS expertise, and real-time graphics to build infrastructure-focused digital twins.",
+    "about-who-title": "Who We Are",
+    "about-who-text":
+      "BICP is a visualization and digital twin initiative backed by <strong>IDEArc Uluslararası Mühendislik ve Müşavirlik Limited Şirketi</strong>, <strong>MME Mimarlık</strong> and <strong>LXIR Teknoloji by Gökhan Dönmez</strong>. We specialize in real-time infrastructure visualization and digital twin solutions for complex engineering projects.",
+    "about-vision-title": "Our Vision",
+    "about-vision-text":
+      "To become the reference platform for infrastructure digital twins, enabling engineers, municipalities, and communities to interact with complex projects in a clear, intuitive way.",
+    "about-values-title": "What We Care About",
+    "val1": "Engineering precision in every visualization.",
+    "val2": "Technical excellence and honest performance metrics.",
+    "val3": "Transparent collaboration with partner offices and clients.",
+    "val4": "Long-term maintainability of data, scenes and workflows.",
+    "about-media-title": "PARTNER / PROGRAM PLACEHOLDER",
+    "about-media-body":
+      "Place NVIDIA Inception logo and the logos of IDEArc, MME Mimarlık and LXIR Teknoloji by Gökhan Dönmez here once available.",
 
     "contact-title": "Contact",
     "contact-subtitle":
@@ -104,9 +212,17 @@ const translations = {
     "contact-location-title": "Location",
     "contact-highlight":
       "Prefer a live demo? Add a Calendly or booking link here so clients can schedule a call with BICP.",
+    "contact-files-label-short": "Files",
+    "contact-files-empty": "No files attached.",
+    "contact-email-subject": "BICP Contact Form",
+    "contact-send-working": "Preparing your email…",
+    "contact-send-success":
+      "We opened your email client with the details above; please review and send it.",
+    "contact-send-error":
+      "Could not open your email client. Please email info@BICP.digital manually.",
 
     "footer-text":
-      "© <span id=\"year\"></span> BICP — Infrastructure Digital Twins & Visualization.",
+      "© <span id=\"year\"></span> BICP - Infrastructure Digital Twins & Visualization.",
 
     /* PRICING (EN) */
     "pricing-eyebrow": "Pricing Estimator",
@@ -229,7 +345,116 @@ const translations = {
     "services-subtitle":
       "BICP, altyapı projeleri için veri hazırlığından gerçek zamanlı, RTX hızlandırmalı sunuma kadar uçtan uca görselleştirme ve dijital ikiz hizmetleri sunar.",
 
-    // ... keep all the TR keys from earlier version ...
+    // PRODUCTS
+    "products-title": "Ürünler",
+    "products-subtitle":
+      "BICP, karmaşık altyapı verilerini ölçeklenebilir, gerçek zamanlı dijital deneyimlere dönüştüren araçlar geliştiriyor.",
+    "product1-title": "YZ Destekli BIM/CBS'den VR'a Dönüştürücü",
+    "product1-text":
+      "CAD, BIM ve CBS veri setlerini minimum manuel işlemle kullanıma hazır Unreal Engine sahnelerine otomatik olarak dönüştürür.",
+    "product1-li1": "Otomatik mesh ve malzeme dönüşümü",
+    "product1-li2": "YZ destekli temizlik ve sınıflandırma",
+    "product1-li3": "LOD ve streaming kurulumu",
+    "product1-tag": "Geliştirme Aşamasında",
+    "product2-title": "Altyapı Dijital İkiz Görüntüleyicisi",
+    "product2-text":
+      "Altyapı varlıkları için keşif, ölçüm ve metadata görselleştirmeye odaklanan hafif bir görüntüleyici.",
+    "product2-li1": "IFC özellik inceleme",
+    "product2-li2": "Katman kontrolleri ve filtreler",
+    "product2-li3": "Web/masaüstü dağıtım seçenekleri",
+    "product2-tag": "Pilot Hazır",
+    "product3-title": "Otoyol Bilgi Yönetimi (HIM)",
+    "product3-text":
+      "Yol varlıklarını, güzergâhları, yapıları ve görselleştirmeyi tek bir arayüzde buluşturan veri odaklı platform.",
+    "product3-li1": "Yol varlık veri tabanı ve katmanları",
+    "product3-li2": "Navisworks, Civil 3D, IFC desteği",
+    "product3-li3": "Gelecekte YZ tabanlı öngörücü analizler",
+    "product3-tag": "Yol Haritasında",
+    "product-media-title": "ÜRÜN ARAYÜZÜ YER TUTUCU",
+    "product-media-body":
+      "Buraya BICP dönüştürücü, görüntüleyici veya HIM arayüz ekran görüntülerini/kısa kliplerini ekleyin.",
+    "product-media-note":
+      "Önerilen: 2-3 statik ekran veya kısa bir karusel.",
+    "pill1": "BIM'den VR'a Otomasyon",
+    "pill2": "IFC4.3 Altyapı",
+    "pill3": "Navisworks / Civil 3D Entegrasyonu",
+    "pill4": "Sahne Optimizasyonu",
+    "pill5": "RTX Hızlandırılmış Render",
+    "pill6": "Bulut Dağıtımı",
+
+    // TECHNOLOGY
+    "tech-title": "Teknoloji Yığını",
+    "tech-subtitle":
+      "BICP, oyun motoru teknolojisi, BIM/CBS verileri ve NVIDIA GPU'larını birleştirerek altyapı dijital ikizlerini ölçekli biçimde sunar.",
+    "tech1-label": "Motor & Render",
+    "tech1-title": "Unreal Engine 5.6 + NVIDIA RTX",
+    "tech1-text":
+      "Görselleştirme hattımız UE5'in Nanite, Lumen ve World Partition özelliklerini NVIDIA RTX ile gerçek zamanlı ışın izleme performansı için kullanır.",
+    "tech1-li1": "Karmaşık varlıklar için Nanite geometrisi",
+    "tech1-li2": "Lumen küresel aydınlatma",
+    "tech1-li3": "Geniş arazide performans için DLSS",
+    "tech2-label": "Veri & Birlikte Çalışabilirlik",
+    "tech2-title": "BIM • CBS • Lidar • DEM",
+    "tech2-text":
+      "Doğru ve bağlamsal dijital ikizler için geniş yelpazede mühendislik veri formatlarını ve coğrafi referansları destekliyoruz.",
+    "tech2-li1": "IFC4.3, Revit, Navisworks, DWG/DXF",
+    "tech2-li2": "Shapefile, GeoJSON, Mapbox/Cesium",
+    "tech2-li3": "DEM, yükseklik haritaları, Lidar (LAS/LAZ)",
+    "tech-media-title": "TEKNOLOJİ DİYAGRAMI YER TUTUCU",
+    "tech-media-body":
+      "Veri kaynakları → pipeline → UE5 → görüntüleyici/VR akışını gösteren bir BICP mimari diyagramını buraya ekleyin.",
+    "tech-media-note":
+      "Önerilen: basit 3-4 adımlı diyagram veya akış.",
+    "pill7": "RTX 6000 Ada Bulut Sunucuları",
+    "pill8": "Omniverse USD (Planlı)",
+    "pill9": "Python & C# Otomasyonu",
+    "pill10": "Sahne Yayını",
+    "pill11": "Devasa Arazi Desteği",
+    "pill12": "YZ Destekli Optimizasyon",
+
+    // CASE STUDIES
+    "cases-title": "Vaka Çalışmaları",
+    "cases-subtitle":
+      "BICP'nin mühendislik ekiplerinin karmaşık altyapı tasarımlarını gerçek zamanlı 3B ile aktarmasına yardımcı olduğu projelerden seçkiler.",
+    "case1-title": "Bingazi Çevre Yolu Dijital İkizi",
+    "case1-tag": "Otoyol • Gerçek Zamanlı",
+    "case1-meta": "Girdiler: Civil 3D hizaları • DWG • DEM • 3B modeller",
+    "case1-text":
+      "Kavşaklar, yapılar ve araziyi içeren UE5 tabanlı gerçek zamanlı bir ortam ürettik. Dijital ikiz; işveren sunumları ve tasarım değerlendirmelerinde kullanıldı.",
+    "case1-li1": "Yol ve kavşakların tam 3B genel görünümü",
+    "case1-li2": "Paydaşlar için sinematik kamera uçuşları",
+    "case1-li3": "RTX GPU'lar üzerinde optimize performans",
+    "case1-media":
+      "VAKA ÇALIŞMASI MEDYA YER TUTUCU - Bu projeden BICP ekran görüntüleri veya kısa bir video klibi buraya ekleyin.",
+    "case2-title": "Kentsel Hareketlilik Görselleştirmesi",
+    "case2-tag": "Şehir • Trafik",
+    "case2-meta": "Girdiler: CBS katmanları • hava görüntüleri • simülasyon çıktıları",
+    "case2-text":
+      "Animasyonlu trafik ile çok modlu hareketlilik senaryolarını görselleştirdik; zirve saat sıkışıklığı ve altyapı etkilerini net biçimde gösterdik.",
+    "case2-li1": "Işıklı kavşak animasyonları",
+    "case2-li2": "Senaryo bazlı trafik görselleştirmeleri",
+    "case2-li3": "Kamu bilgilendirme sunumları için video çıktıları",
+    "case2-media":
+      "VAKA ÇALIŞMASI MEDYA YER TUTUCU - Genel görünümler, kavşaklar ve trafik animasyonu kesitlerini buraya ekleyin.",
+
+    // ABOUT
+    "about-title": "BICP Hakkında",
+    "about-subtitle":
+      "BICP, altyapı odaklı dijital ikizler geliştirmek için inşaat mühendisliği bilgisi, BIM/CBS uzmanlığı ve gerçek zamanlı grafikleri bir araya getirir.",
+    "about-who-title": "Biz Kimiz",
+    "about-who-text":
+      "BICP, <strong>IDEArc Uluslararası Mühendislik ve Müşavirlik Limited Şirketi</strong>, <strong>MME Mimarlık</strong> ve <strong>Gökhan Dönmez'in LXIR Teknoloji</strong> girişimi tarafından desteklenen bir görselleştirme ve dijital ikiz inisiyatifidir. Karmaşık mühendislik projeleri için gerçek zamanlı altyapı görselleştirme ve dijital ikiz çözümlerinde uzmanız.",
+    "about-vision-title": "Vizyonumuz",
+    "about-vision-text":
+      "Mühendislerin, belediyelerin ve toplulukların karmaşık projelerle net ve sezgisel biçimde etkileşmesini sağlayan altyapı dijital ikizlerinde referans platform olmak.",
+    "about-values-title": "Önemsediklerimiz",
+    "val1": "Her görselleştirmede mühendislik hassasiyeti.",
+    "val2": "Teknik mükemmeliyet ve dürüst performans ölçümleri.",
+    "val3": "İş ortaklarımız ve müşterilerimizle şeffaf iş birliği.",
+    "val4": "Veri, sahne ve iş akışlarının uzun vadeli sürdürülebilirliği.",
+    "about-media-title": "ORTAK / PROGRAM YER TUTUCU",
+    "about-media-body":
+      "Hazır olduğunda buraya NVIDIA Inception logosu ile IDEArc, MME Mimarlık ve Gökhan Dönmez'in LXIR Teknoloji logolarını yerleştirin.",
 
     "contact-title": "İletişim",
     "contact-subtitle":
@@ -247,6 +472,14 @@ const translations = {
     "contact-location-title": "Konum",
     "contact-highlight":
       "Canlı demo tercih ediyorsanız buraya bir Calendly veya randevu bağlantısı ekleyerek müşterilerin BICP ile toplantı planlamasını sağlayabilirsiniz.",
+    "contact-files-label-short": "Dosyalar",
+    "contact-files-empty": "Dosya eklenmedi.",
+    "contact-email-subject": "BICP İletişim Formu",
+    "contact-send-working": "E-postanız hazırlanıyor…",
+    "contact-send-success":
+      "E-posta istemcinizde mesaj taslağı açıldı; lütfen kontrol edip gönderin.",
+    "contact-send-error":
+      "E-posta istemcisi açılamadı. Lütfen info@BICP.digital adresine manuel olarak yazın.",
 
     "footer-text":
       "© <span id=\"year\"></span> BICP — Altyapı Dijital İkizleri ve Görselleştirme.",
@@ -369,12 +602,54 @@ function applyTranslations(lang) {
 // CONTACT FORM (INDEX)
 function handleContactSubmit(event) {
   event.preventDefault();
-  const lang = getCurrentLang();
-  const msg =
-    lang === "tr"
-      ? "Teşekkürler! Bu form şu an örnek amaçlıdır. Lütfen arka uç veya e-posta servisine bağlayın."
-      : "Thank you! This form is currently a placeholder. Please connect it to your backend or email service.";
-  alert(msg);
+  const form = event.target;
+  const statusEl = document.getElementById("contactStatus");
+
+  if (statusEl) {
+    statusEl.classList.remove("error");
+    statusEl.textContent = t("contact-send-working");
+  }
+
+  try {
+    const formData = new FormData(form);
+    const name = (formData.get("name") || "").trim();
+    const company = (formData.get("company") || "").trim();
+    const email = (formData.get("email") || "").trim();
+    const project = (formData.get("project") || "").trim();
+    const filesInput = form.querySelector("#files");
+    const fileNames =
+      filesInput && filesInput.files.length
+        ? Array.from(filesInput.files)
+            .map((file) => file.name)
+            .join(", ")
+        : t("contact-files-empty");
+
+    const summary = [
+      `${t("contact-name-label")}: ${name || "-"}`,
+      `${t("contact-company-label")}: ${company || "-"}`,
+      `${t("contact-email-label")}: ${email || "-"}`,
+      `${t("contact-project-label")}: ${project || "-"}`,
+      `${t("contact-files-label-short")}: ${fileNames}`
+    ].join("\n");
+
+    const subject = encodeURIComponent(t("contact-email-subject"));
+    const body = encodeURIComponent(summary);
+    const mailtoUrl = `mailto:info@BICP.digital?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoUrl;
+
+    if (statusEl) {
+      statusEl.textContent = t("contact-send-success");
+    }
+
+    form.reset();
+  } catch (error) {
+    console.error("Contact submission failed", error);
+    if (statusEl) {
+      statusEl.classList.add("error");
+      statusEl.textContent = t("contact-send-error");
+    }
+  }
 }
 
 // PRICING CALC
