@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BICP - Case Studies</title>
+  <title>BICP - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="See how BICP delivers high-fidelity digital twins and visualization for infrastructure projects." />
 
@@ -36,7 +36,7 @@
             <a href="index.html#services" data-i18n="nav-services">Services</a>
             <a href="products.html" data-i18n="nav-products">Products</a>
             <a href="technology.html" data-i18n="nav-tech">Technology</a>
-            <a href="case-studies.html" data-i18n="nav-cases">Case Studies</a>
+            <a href="case-studies.html" data-i18n="nav-cases">Portfolio</a>
             <a href="about.html" data-i18n="nav-about">About</a>
             <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
             <a href="index.html#contact" class="nav-cta">
@@ -55,14 +55,14 @@
   <main>
 <section id="case-studies">
       <div class="container">
-        <h2 class="section-title" data-i18n="cases-title">Case Studies</h2>
+        <h2 class="section-title" data-i18n="cases-title">Portfolio</h2>
         <p class="section-subtitle" data-i18n="cases-subtitle">
           A selection of projects where BICP helped engineering teams communicate
           complex infrastructure designs through real-time 3D.
         </p>
 
         <div class="case-grid">
-          <article class="case-card">
+          <article class="case-card" data-case-id="case1">
             <div class="case-header">
               <h3 class="case-title" data-i18n="case1-title">
                 Benghazi Ring Road Digital Twin
@@ -82,35 +82,94 @@
               <li data-i18n="case1-li2">Cinematic flythroughs for stakeholders</li>
               <li data-i18n="case1-li3">Optimized performance on RTX GPUs</li>
             </ul>
-            <div class="case-media-placeholder" data-i18n="case1-media">
-              CASE STUDY MEDIA PLACEHOLDER – Insert BICP screenshots or a short video
-              clip from this project here.
+            <div class="case-media" data-case-media>
+              <video
+                class="case-media-video"
+                src="media/STREAM.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+            </div>
+          </article>
+
+          <article class="case-card" data-case-id="case2">
+            <div class="case-header">
+              <h3 class="case-title" data-i18n="case2-title">
+                GISTANBUL Urban Mobility Visualization
+              </h3>
+              <span class="case-tag" data-i18n="case2-tag">City · GIS</span>
+            </div>
+            <p class="case-meta" data-i18n="case2-meta">
+              Inputs: Istanbul GIS corridors · HD orthomosaics · live mobility APIs
+            </p>
+            <p class="card-text" data-i18n="case2-text">
+              GISTANBUL blends Istanbul's citywide GIS layers, aerial survey and
+              mobility KPIs into an explorable twin for corridor planning.
+            </p>
+            <ul class="card-list">
+              <li data-i18n="case2-li1">Metrobus, tram and ferry networks rendered on accurate terrain</li>
+              <li data-i18n="case2-li2">Heatmaps for congestion, ridership and land use</li>
+              <li data-i18n="case2-li3">Shareable video + web viewer packages for stakeholders</li>
+            </ul>
+            <div class="case-media" data-case-media></div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-header">
+              <h3 class="case-title" data-i18n="case3-title">
+                Ankara Smart Interchange Simulation
+              </h3>
+              <span class="case-tag" data-i18n="case3-tag">Interchange · Simulation</span>
+            </div>
+            <p class="case-meta" data-i18n="case3-meta">
+              Inputs: IFC bridges · Synchro outputs · aerial scans
+            </p>
+            <p class="card-text" data-i18n="case3-text">
+              We visualized an intelligent interchange construction sequence with live
+              traffic behavior, structural phasing, and quality-of-service analytics in
+              UE5 for Ankara’s highway authority.
+            </p>
+            <ul class="card-list">
+              <li data-i18n="case3-li1">Lane-by-lane traffic playback synchronized with signals</li>
+              <li data-i18n="case3-li2">Time-based construction and detour phasing</li>
+              <li data-i18n="case3-li3">Sensor overlays for LOS and queue visualization</li>
+            </ul>
+            <div class="case-media case-media--placeholder">
+              <p data-i18n="case3-media">
+                Placeholder – Add rendered stills or a narrated clip from the Ankara
+                interchange simulation.
+              </p>
             </div>
           </article>
 
           <article class="case-card">
             <div class="case-header">
-              <h3 class="case-title" data-i18n="case2-title">
-                Urban Mobility Visualization
+              <h3 class="case-title" data-i18n="case4-title">
+                Istanbul Metro Extension Visualization
               </h3>
-              <span class="case-tag" data-i18n="case2-tag">City · Traffic</span>
+              <span class="case-tag" data-i18n="case4-tag">Transit · Visualization</span>
             </div>
-            <p class="case-meta" data-i18n="case2-meta">
-              Inputs: GIS layers · aerial imagery · simulation outputs
+            <p class="case-meta" data-i18n="case4-meta">
+              Inputs: BIM station models · tunnel alignments · GIS context
             </p>
-            <p class="card-text" data-i18n="case2-text">
-              We visualized multi-modal mobility scenarios with animated
-              traffic, highlighting peak-hour congestion patterns and infrastructure
-              impacts.
+            <p class="card-text" data-i18n="case4-text">
+              Produced stakeholder-ready visuals of new underground stations and
+              surface impacts, blending tunnel alignments with photogrammetry and GIS
+              context layers.
             </p>
             <ul class="card-list">
-              <li data-i18n="case2-li1">Signalized intersection animations</li>
-              <li data-i18n="case2-li2">Scenario-based traffic visualizations</li>
-              <li data-i18n="case2-li3">Video exports for public communication</li>
+              <li data-i18n="case4-li1">Day/night station interior lighting scenarios</li>
+              <li data-i18n="case4-li2">Animated passenger flows and access paths</li>
+              <li data-i18n="case4-li3">GIS-based noise and vibration overlay maps</li>
             </ul>
-            <div class="case-media-placeholder" data-i18n="case2-media">
-              CASE STUDY MEDIA PLACEHOLDER – Insert overview views, intersections and
-              traffic animation snippets here.
+            <div class="case-media case-media--placeholder">
+              <p data-i18n="case4-media">
+                Placeholder – Add metro walkthrough renders or construction timeline
+                sequences here.
+              </p>
             </div>
           </article>
         </div>
@@ -137,6 +196,7 @@
   <script src="assets/js/calendar.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/pricing.js"></script>
+  <script src="assets/js/case-media.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

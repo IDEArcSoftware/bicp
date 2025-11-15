@@ -215,6 +215,7 @@
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.13em;
+    white-space: nowrap;
   }
 
   .nav-right {
@@ -235,6 +236,7 @@
     padding: 6px 10px;
     border-radius: 999px;
     transition: color var(--transition-fast), background var(--transition-fast);
+    white-space: nowrap;
   }
 
   .nav-links a:hover {
@@ -864,15 +866,39 @@
     margin-bottom: 8px;
   }
 
-  .case-media-placeholder {
-    margin-top: 10px;
-    border-radius: 12px;
-    border: 1px dashed rgba(255, 255, 255, 0.18);
-    padding: 12px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+  .case-media {
+    margin-top: 12px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
     background: rgba(3, 5, 10, 0.9);
+  }
+
+  .case-media video,
+  .case-media iframe,
+  .case-media img {
+    width: 100%;
+    display: block;
+  }
+
+  .case-media-video {
+    background: #000;
+  }
+
+  .case-media--placeholder {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    min-height: 180px;
+    text-align: center;
+  }
+
+  .case-media--placeholder p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
   }
 
   /* About */
@@ -1001,16 +1027,6 @@
 
   .contact-info p + p {
     margin-top: 6px;
-  }
-
-  .contact-highlight {
-    margin-top: 14px;
-    padding: 9px 11px;
-    border-radius: 12px;
-    background: rgba(93, 245, 201, 0.09);
-    border: 1px solid rgba(93, 245, 201, 0.45);
-    font-size: 0.82rem;
-    color: var(--accent-strong);
   }
 
   .calendar-button-wrapper {
