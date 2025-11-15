@@ -198,13 +198,6 @@
                 </small>
               </div>
 
-              <button type="button" class="btn-primary" id="calculateBtn" data-i18n="pricing-calc-btn">
-                Calculate Estimate
-              </button>
-            </div>
-
-            <!-- RIGHT: FEATURES & ESTIMATE -->
-            <div>
               <div class="field">
                 <label data-i18n="pricing-features-label">Visual Features</label>
                 <small data-i18n="pricing-features-help">
@@ -250,13 +243,14 @@
                   <span class="slider"></span>
                 </label>
               </div>
+            </div>
 
-              <hr class="pricing-divider" />
-
+            <!-- RIGHT: FEATURES & ESTIMATE -->
+            <div>
               <div class="estimate-panel">
                 <div class="estimate-label" data-i18n="pricing-estimate-label">Estimate*</div>
                 <div id="estimateValue" class="estimate-value">
-                  –
+                  -
                 </div>
                 <div class="estimate-note" data-i18n="pricing-estimate-note">
                   *This is a rough, non-binding estimate. Final pricing depends on data quality,
@@ -269,13 +263,21 @@
                 </ul>
               </div>
 
-              <a
-                href="index.html#contact"
-                class="contact-sales"
-                id="contactSalesBtn"
-              >
-                <span data-i18n="pricing-contact-sales">Contact Sales</span> →
-              </a>
+              <div class="estimate-actions">
+                <button type="button" class="btn-primary" id="calculateBtn" data-i18n="pricing-calc-btn">
+                  Calculate Estimate
+                </button>
+                <a
+                  href="index.html#contact"
+                  class="contact-sales"
+                  id="contactSalesBtn"
+                >
+                  <span data-i18n="pricing-contact-sales">Contact Sales</span> →
+                </a>
+                <button type="button" class="btn-secondary pdf-btn" id="getPdfBtn" data-i18n="pricing-pdf-btn">
+                  Get PDF
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -293,7 +295,12 @@
       <div data-i18n="footer-text">
         © <span id="year"></span> BICP — Infrastructure Digital Twins & Visualization.
       </div>
-      <div>viz.idearc.com.tr</div>
+      <div class="footer-links">
+        <a href="#home" data-i18n="nav-home">Home</a>
+        <a href="#services" data-i18n="nav-services">Services</a>
+        <a href="products.html" data-i18n="nav-products">Products</a>
+        <a href="#contact" data-i18n="nav-contact-foot">Contact</a>
+      </div>
     </div>
   </footer>
 

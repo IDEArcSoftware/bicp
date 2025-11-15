@@ -921,6 +921,38 @@ form {
   color: var(--accent-strong);
 }
 
+.calendar-button-wrapper {
+  margin-top: 16px;
+}
+
+.calendar-button-wrapper .qxCTlb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: #000 !important;
+  padding: 11px 20px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    filter var(--transition-fast);
+  box-shadow: var(--shadow-soft);
+}
+
+.calendar-button-wrapper .qxCTlb:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+.calendar-button-wrapper .qxCTlb:focus-visible {
+  outline: 2px solid rgba(93, 245, 201, 0.8);
+  outline-offset: 2px;
+}
+
 /* Footer */
 
 footer {
@@ -1176,7 +1208,6 @@ select:focus {
   align-items: center;
   gap: 6px;
   font-size: 0.86rem;
-  margin-top: 12px;
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -1193,6 +1224,20 @@ select:focus {
   border-color: rgba(93, 245, 201, 0.7);
   color: var(--text-main);
   transform: translateY(-1px);
+}
+
+.estimate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.estimate-actions .btn-primary,
+.estimate-actions .contact-sales,
+.estimate-actions .pdf-btn {
+  margin-top: 0;
 }
 
 .summary-list {

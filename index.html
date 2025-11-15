@@ -325,12 +325,12 @@
           <div class="contact-info">
             <p>
               <strong data-i18n="contact-email-title">Email</strong><br />
-              <a href="mailto:info@BICP.digital">info@BICP.digital</a>
+              <a href="mailto:info@idearc.com.tr">info@idearc.com.tr</a>
             </p>
 
             <p>
               <strong data-i18n="contact-phone-title">Phone</strong><br />
-              +90 000 000 00 00
+              +90 212 823 12 34
             </p>
 
             <p>
@@ -342,6 +342,12 @@
               Prefer a live demo? Add a Calendly or booking link here so clients can
               schedule a call with BICP.
             </div>
+
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <div class="calendar-button-wrapper">
+              <span id="calendarBookingButton" aria-live="polite"></span>
+            </div>
+            <!-- end Google Calendar Appointment Scheduling -->
           </div>
         </div>
       </div>
@@ -363,7 +369,13 @@
     </div>
   </footer>
 
+  <link
+    rel="stylesheet"
+    href="https://calendar.google.com/calendar/scheduling-button-script.css"
+  />
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
