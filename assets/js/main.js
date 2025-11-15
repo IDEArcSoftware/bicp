@@ -212,6 +212,7 @@ const translations = {
     "contact-location-title": "Location",
     "contact-highlight":
       "Prefer a live demo? Add a Calendly or booking link here so clients can schedule a call with BICP.",
+    "calendar-button-label": "Book a meeting",
     "contact-files-label-short": "Files",
     "contact-files-empty": "No files attached.",
     "contact-email-subject": "BICP Contact Form",
@@ -219,7 +220,7 @@ const translations = {
     "contact-send-success":
       "We opened your email client with the details above; please review and send it.",
     "contact-send-error":
-      "Could not open your email client. Please email info@BICP.digital manually.",
+      "Could not open your email client. Please email info@idearc.com.tr manually.",
 
     "footer-text":
       "© <span id=\"year\"></span> BICP - Infrastructure Digital Twins & Visualization.",
@@ -280,6 +281,15 @@ const translations = {
     "pricing-summary-initial":
       "Choose your project parameters and click “Calculate Estimate”.",
     "pricing-contact-sales": "Contact Sales",
+    "pricing-pdf-btn": "Get PDF",
+    "pricing-pdf-empty": "Please calculate an estimate before exporting to PDF.",
+    "pricing-pdf-title": "BICP Estimate Summary",
+    "pricing-pdf-estimate-label": "Estimated Budget",
+    "pricing-pdf-summary-label": "Summary",
+    "pricing-pdf-popup-blocked": "Please allow pop-ups to export the PDF.",
+    "pricing-pdf-generated": "Generated on",
+    "pricing-pdf-contact": "Contact",
+    "pricing-pdf-footer": "Infrastructure Visualization & Digital Twins by BICP",
     "pricing-disclaimer":
       "Disclaimer: All values here are indicative only and do not constitute an offer. BICP will provide a formal proposal after reviewing your project and data.",
 
@@ -472,6 +482,7 @@ const translations = {
     "contact-location-title": "Konum",
     "contact-highlight":
       "Canlı demo tercih ediyorsanız buraya bir Calendly veya randevu bağlantısı ekleyerek müşterilerin BICP ile toplantı planlamasını sağlayabilirsiniz.",
+    "calendar-button-label": "Randevu oluşturun",
     "contact-files-label-short": "Dosyalar",
     "contact-files-empty": "Dosya eklenmedi.",
     "contact-email-subject": "BICP İletişim Formu",
@@ -479,7 +490,7 @@ const translations = {
     "contact-send-success":
       "E-posta istemcinizde mesaj taslağı açıldı; lütfen kontrol edip gönderin.",
     "contact-send-error":
-      "E-posta istemcisi açılamadı. Lütfen info@BICP.digital adresine manuel olarak yazın.",
+      "E-posta istemcisi açılamadı. Lütfen info@idearc.com.tr adresine manuel olarak yazın.",
 
     "footer-text":
       "© <span id=\"year\"></span> BICP — Altyapı Dijital İkizleri ve Görselleştirme.",
@@ -540,6 +551,15 @@ const translations = {
     "pricing-summary-initial":
       "Parametreleri seçin ve “Tahmin Hesapla” butonuna tıklayın.",
     "pricing-contact-sales": "Satış ile İletişime Geç",
+    "pricing-pdf-btn": "PDF İndir",
+    "pricing-pdf-empty": "PDF almadan önce bir tahmin hesaplayın.",
+    "pricing-pdf-title": "BICP Tahmin Özeti",
+    "pricing-pdf-estimate-label": "Tahmini Bütçe",
+    "pricing-pdf-summary-label": "Özet",
+    "pricing-pdf-popup-blocked": "PDF için açılır pencereye izin verin.",
+    "pricing-pdf-generated": "Oluşturulma",
+    "pricing-pdf-contact": "İletişim",
+    "pricing-pdf-footer": "BICP tarafından Altyapı Görselleştirme ve Dijital İkizler",
     "pricing-disclaimer":
       "Not: Buradaki tüm tutarlar yaklaşık aralıklardır ve teklif niteliği taşımaz. BICP, proje ve verileriniz incelendikten sonra resmi teklif paylaşacaktır.",
 
@@ -567,6 +587,14 @@ const translations = {
       "Teşekkürler! Bu form şu an örnek amaçlıdır. Lütfen arka uç veya e-posta servisine bağlayın."
   }
 };
+
+const CALENDAR_BOOKING_URL =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3lkfyxVmlWMwZmKuex4U53PCxX3fSLNCTnmQtyK44aY1vM2JkAxqf2oBBdH4oDXy5y73wv_GcO?gv=true";
+let calendarButtonInitialized = false;
+let calendarButtonInitHandle = null;
+const COMPANY_EMAIL = "info@idearc.com.tr";
+const COMPANY_PHONE = "+90 212 823 12 34";
+const COMPANY_SITE = "www.i-m.com.tr";
 
 // HELPERS
 function getCurrentLang() {
@@ -597,6 +625,68 @@ function applyTranslations(lang) {
   });
 
   document.documentElement.lang = lang;
+  updateCalendarButtonLabel();
+}
+
+function styleCalendarButton() {
+  const button = document.querySelector(".calendar-button-wrapper .qxCTlb");
+  if (!button) return;
+  button.classList.add("btn-primary");
+  button.setAttribute("type", "button");
+  button.setAttribute("aria-label", t("calendar-button-label"));
+}
+
+function updateCalendarButtonLabel() {
+  const button = document.querySelector(".calendar-button-wrapper .qxCTlb");
+  if (!button) return;
+  const label = t("calendar-button-label");
+  button.textContent = label;
+  button.setAttribute("aria-label", label);
+}
+
+function initCalendarButton() {
+  const target = document.getElementById("calendarBookingButton");
+  if (!target) return;
+
+  const tryLoad = () => {
+    if (!window.calendar || !calendar.schedulingButton) {
+      return false;
+    }
+
+    calendar.schedulingButton.load({
+      url: CALENDAR_BOOKING_URL,
+      color: "#039BE5",
+      label: t("calendar-button-label"),
+      target
+    });
+    calendarButtonInitialized = true;
+    setTimeout(() => {
+      styleCalendarButton();
+      updateCalendarButtonLabel();
+    }, 0);
+    return true;
+  };
+
+  if (calendarButtonInitialized) {
+    updateCalendarButtonLabel();
+    return;
+  }
+
+  if (tryLoad()) {
+    return;
+  }
+
+  if (calendarButtonInitHandle) {
+    return;
+  }
+
+  let attempts = 20;
+  calendarButtonInitHandle = setInterval(() => {
+    if (tryLoad() || --attempts <= 0) {
+      clearInterval(calendarButtonInitHandle);
+      calendarButtonInitHandle = null;
+    }
+  }, 300);
 }
 
 // CONTACT FORM (INDEX)
@@ -634,7 +724,7 @@ function handleContactSubmit(event) {
 
     const subject = encodeURIComponent(t("contact-email-subject"));
     const body = encodeURIComponent(summary);
-    const mailtoUrl = `mailto:info@BICP.digital?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:info@idearc.com.tr?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
 
@@ -658,6 +748,7 @@ function initPricingPage() {
   const archFields = document.getElementById("architecturalFields");
   const civilFields = document.getElementById("civilFields");
   const calculateBtn = document.getElementById("calculateBtn");
+  const pdfBtn = document.getElementById("getPdfBtn");
 
   if (!calculateBtn || !archFields || !civilFields) return; // not on pricing page
 
@@ -790,6 +881,180 @@ function initPricingPage() {
   }
 
   calculateBtn.addEventListener("click", calculateEstimate);
+
+  function handlePdfExport() {
+    const estimateValue = document.getElementById("estimateValue")?.textContent.trim();
+    if (!estimateValue || estimateValue === "-") {
+      alert(t("pricing-pdf-empty"));
+      return;
+    }
+
+    const summaryList = document.getElementById("summaryList");
+    const summaryItems = summaryList
+      ? Array.from(summaryList.querySelectorAll("li")).map((li) => li.textContent.trim()).filter(Boolean)
+      : [];
+    const summaryMarkup = summaryItems.length
+      ? summaryItems.map((item) => `<li>${item}</li>`).join("")
+      : "<li>-</li>";
+
+    const title = t("pricing-pdf-title");
+    const estimateLabel = t("pricing-pdf-estimate-label");
+    const summaryLabel = t("pricing-pdf-summary-label");
+    const generatedLabel = t("pricing-pdf-generated");
+    const contactLabel = t("pricing-pdf-contact");
+    const footerText = t("pricing-pdf-footer");
+
+    const lang = getCurrentLang();
+    const locale = lang === "tr" ? "tr-TR" : "en-US";
+    const timestamp = new Date().toLocaleString(locale, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) {
+      alert(t("pricing-pdf-popup-blocked"));
+      return;
+    }
+
+    const styles = `
+      :root {
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        color: #0b1020;
+      }
+      body {
+        margin: 0;
+        padding: 32px;
+        background: #f2f4fb;
+      }
+      .sheet {
+        max-width: 760px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 35px 90px rgba(15, 23, 42, 0.2);
+        overflow: hidden;
+      }
+      .sheet-header {
+        background: radial-gradient(circle at top, #1f2a44, #0a0f1c);
+        padding: 32px 40px;
+        color: #e8f2ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .brand {
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .meta {
+        text-align: right;
+        font-size: 0.85rem;
+        color: rgba(232, 242, 255, 0.85);
+      }
+      .content {
+        padding: 32px 40px 38px 40px;
+      }
+      .estimate-card {
+        border: 1px solid rgba(16, 24, 40, 0.08);
+        border-radius: 16px;
+        padding: 18px 22px;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, rgba(93, 245, 201, 0.12), rgba(53, 198, 255, 0.12));
+      }
+      .estimate-label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #4b5565;
+        margin-bottom: 6px;
+      }
+      .estimate-value {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #04121b;
+      }
+      h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #4b5565;
+        margin-bottom: 12px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      li {
+        padding: 10px 12px;
+        border: 1px solid rgba(16, 24, 40, 0.08);
+        border-radius: 12px;
+        margin-bottom: 8px;
+        font-size: 0.92rem;
+        color: #0f172a;
+        background: #fdfdfd;
+      }
+      .footer {
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+        margin-top: 28px;
+        padding-top: 16px;
+        font-size: 0.82rem;
+        color: #4b5565;
+        display: flex;
+        justify-content: space-between;
+      }
+    `;
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <title>${title}</title>
+          <style>${styles}</style>
+        </head>
+        <body>
+          <div class="sheet">
+            <div class="sheet-header">
+              <div class="brand">BICP</div>
+              <div class="meta">
+                <div>${generatedLabel}: ${timestamp}</div>
+                <div>${contactLabel}: ${COMPANY_EMAIL}</div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="estimate-card">
+                <div class="estimate-label">${estimateLabel}</div>
+                <div class="estimate-value">${estimateValue}</div>
+              </div>
+              <h2>${summaryLabel}</h2>
+              <ul>${summaryMarkup}</ul>
+              <div class="footer">
+                <span>${footerText}</span>
+                <span>${COMPANY_PHONE} · ${COMPANY_SITE}</span>
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+      printWindow.print();
+    }, 200);
+  }
+
+  if (pdfBtn) {
+    pdfBtn.addEventListener("click", handlePdfExport);
+  }
 }
 
 // NAV & LANG INIT
@@ -821,6 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
       langButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       applyTranslations(lang);
+      initCalendarButton();
     });
   });
 
@@ -845,4 +1111,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("pricing-page")) {
     initPricingPage();
   }
+
+  initCalendarButton();
 });
