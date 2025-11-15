@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BICP – Pricing Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Interactive pricing estimator for BICP infrastructure and architectural visualization services."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>
+            <div class="logo-text-main">BICP</div>
+            <div class="logo-text-sub" data-i18n="logo-sub">
+              Infrastructure Digital Twins
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+        </button>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="index.html#home" data-i18n="nav-home">Home</a>
+            <a href="index.html#services" data-i18n="nav-services">Services</a>
+            <a href="index.html#products" data-i18n="nav-products">Products</a>
+            <a href="index.html#technology" data-i18n="nav-tech">Technology</a>
+            <a href="index.html#case-studies" data-i18n="nav-cases">Case Studies</a>
+            <a href="index.html#about" data-i18n="nav-about">About</a>
+            <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+            <a href="index.html#contact" class="nav-cta">
+              <span data-i18n="nav-cta">Contact</span> →
+            </a>
+          </div>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="pricing-page">
+    <section>
+      <div class="container">
+        <div class="page-header">
+          <div class="page-eyebrow" data-i18n="pricing-eyebrow">Pricing Estimator</div>
+          <h1 class="page-title" data-i18n="pricing-title">
+            Estimate your visualization package
+          </h1>
+          <p class="page-subtitle" data-i18n="pricing-subtitle">
+            This tool helps you approximate the budget for a BICP project based on project type,
+            size, and features. Final pricing is confirmed after reviewing your data and scope.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="form-grid">
+            <!-- LEFT: INPUTS -->
+            <div>
+              <!-- Type -->
+              <div class="field">
+                <label data-i18n="pricing-type-label">Type</label>
+                <div class="radio-group">
+                  <label class="radio-pill">
+                    <input type="radio" name="projectType" value="architectural" checked />
+                    <span data-i18n="pricing-type-arch">Architectural</span>
+                  </label>
+                  <label class="radio-pill">
+                    <input type="radio" name="projectType" value="civil" />
+                    <span data-i18n="pricing-type-civil">Civil</span>
+                  </label>
+                </div>
+                <small data-i18n="pricing-type-help">
+                  Architectural: building / campus projects. Civil: roads, interchanges, corridors.
+                </small>
+              </div>
+
+              <!-- Architectural inputs -->
+              <div id="architecturalFields">
+                <div class="field">
+                  <label data-i18n="pricing-arch-area-label">Total Built Area (m²)</label>
+                  <input
+                    type="number"
+                    id="archArea"
+                    min="0"
+                    step="1"
+                    data-i18n-placeholder="pricing-arch-area-ph"
+                    placeholder="e.g. 2500"
+                  />
+                </div>
+                <div class="field">
+                  <label data-i18n="pricing-arch-structures-label">Number of Structures</label>
+                  <input
+                    type="number"
+                    id="archStructures"
+                    min="1"
+                    step="1"
+                    data-i18n-placeholder="pricing-arch-structures-ph"
+                    placeholder="e.g. 3"
+                  />
+                </div>
+              </div>
+
+              <!-- Civil inputs -->
+              <div id="civilFields" style="display:none;">
+                <div class="field">
+                  <label data-i18n="pricing-civil-km-label">Kilometers of Road</label>
+                  <input
+                    type="number"
+                    id="civilKm"
+                    min="0"
+                    step="0.1"
+                    data-i18n-placeholder="pricing-civil-km-ph"
+                    placeholder="e.g. 5"
+                  />
+                </div>
+                <div class="field">
+                  <label data-i18n="pricing-civil-int-label">Number of Intersections</label>
+                  <input
+                    type="number"
+                    id="civilIntersections"
+                    min="0"
+                    step="1"
+                    data-i18n-placeholder="pricing-civil-int-ph"
+                    placeholder="e.g. 4"
+                  />
+                </div>
+              </div>
+
+              <!-- Have model -->
+              <div class="field">
+                <label data-i18n="pricing-model-label">Do you have a 3D model?</label>
+                <div class="radio-group">
+                  <label class="radio-pill">
+                    <input type="radio" name="hasModel" value="yes" checked />
+                    <span data-i18n="pricing-model-yes">Yes</span>
+                  </label>
+                  <label class="radio-pill">
+                    <input type="radio" name="hasModel" value="no" />
+                    <span data-i18n="pricing-model-no">No</span>
+                  </label>
+                </div>
+                <small data-i18n="pricing-model-help">
+                  “Yes” means you already have CAD/BIM/3D files we can use as a starting point.
+                </small>
+              </div>
+
+              <!-- Decoration -->
+              <div class="field">
+                <label data-i18n="pricing-decoration-label">Do you need decoration / props?</label>
+                <div class="radio-group">
+                  <label class="radio-pill">
+                    <input type="radio" name="decoration" value="no" checked />
+                    <span data-i18n="pricing-decoration-no">No / Minimal</span>
+                  </label>
+                  <label class="radio-pill">
+                    <input type="radio" name="decoration" value="yes" />
+                    <span data-i18n="pricing-decoration-yes">Yes, detailed</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- BIM-enabled -->
+              <div class="field">
+                <label data-i18n="pricing-bim-label">Do you want a BIM-enabled model?</label>
+                <div class="radio-group">
+                  <label class="radio-pill">
+                    <input type="radio" name="bimEnabled" value="no" checked />
+                    <span data-i18n="pricing-bim-no">No</span>
+                  </label>
+                  <label class="radio-pill">
+                    <input type="radio" name="bimEnabled" value="yes" />
+                    <span data-i18n="pricing-bim-yes">Yes (IFC / data-rich)</span>
+                  </label>
+                </div>
+                <small data-i18n="pricing-bim-help">
+                  BIM-enabled models include structured metadata and navigation through BIM data.
+                </small>
+              </div>
+
+              <button type="button" class="btn-primary" id="calculateBtn" data-i18n="pricing-calc-btn">
+                Calculate Estimate
+              </button>
+            </div>
+
+            <!-- RIGHT: FEATURES & ESTIMATE -->
+            <div>
+              <div class="field">
+                <label data-i18n="pricing-features-label">Visual Features</label>
+                <small data-i18n="pricing-features-help">
+                  Toggle the options you want to include in your package.
+                </small>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <div class="toggle-label" data-i18n="pricing-lighting-label">Lighting</div>
+                  <div class="toggle-description" data-i18n="pricing-lighting-desc">
+                    Day/night, time-of-day, basic scenarios.
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="lightingToggle" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <div class="toggle-label" data-i18n="pricing-foliage-label">Foliage</div>
+                  <div class="toggle-description" data-i18n="pricing-foliage-desc">
+                    Trees, green areas, context vegetation.
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="foliageToggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <div class="toggle-label" data-i18n="pricing-traffic-label">Traffic</div>
+                  <div class="toggle-description" data-i18n="pricing-traffic-desc">
+                    Vehicles, basic traffic flows, animation.
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="trafficToggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <hr class="pricing-divider" />
+
+              <div class="estimate-panel">
+                <div class="estimate-label" data-i18n="pricing-estimate-label">Estimate*</div>
+                <div id="estimateValue" class="estimate-value">
+                  –
+                </div>
+                <div class="estimate-note" data-i18n="pricing-estimate-note">
+                  *This is a rough, non-binding estimate. Final pricing depends on data quality,
+                  revisions, schedule, and detailed scope.
+                </div>
+                <ul class="summary-list" id="summaryList">
+                  <li data-i18n="pricing-summary-initial">
+                    Choose your project parameters and click “Calculate Estimate”.
+                  </li>
+                </ul>
+              </div>
+
+              <a
+                href="index.html#contact"
+                class="contact-sales"
+                id="contactSalesBtn"
+              >
+                <span data-i18n="pricing-contact-sales">Contact Sales</span> →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="pricing-disclaimer" data-i18n="pricing-disclaimer">
+          Disclaimer: All values here are indicative only and do not constitute an offer.
+          BICP will provide a formal proposal after reviewing your project and data.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div data-i18n="footer-text">
+        © <span id="year"></span> BICP — Infrastructure Digital Twins & Visualization.
+      </div>
+      <div>viz.idearc.com.tr</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
